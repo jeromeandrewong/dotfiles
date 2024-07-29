@@ -1,9 +1,8 @@
 {
   "workbench.startupEditor": "none",
   "symbols.hidesExplorerArrows": false,
-  "workbench.settings.applyToAllProfiles": [],
   "workbench.colorTheme": "Aura Dracula Spirit (Soft)",
-  "workbench.iconTheme": "material-icon-theme",
+  "workbench.iconTheme": "symbols",
   "workbench.sideBar.location": "right",
   "git.ignoreRebaseWarning": true,
   "launch": {
