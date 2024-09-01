@@ -1,9 +1,13 @@
-{
-  // open json editor for settings
+{  // open json editor for settings
   "workbench.settings.editor": "json",
+  // misc
+  "workbench.startupEditor": "none",
+  "git.confirmSync": false,
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "symbols.hidesExplorerArrows": false,
 
   // Theme
-  "workbench.colorTheme": "Aura Dark",
+  "workbench.colorTheme": "Enchant",
   "workbench.iconTheme": "moxer-icons",
 
   // Change font
@@ -22,8 +26,8 @@
   "terminal.integrated.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.fontVariations": true,
-  
-  //  Cursor
+
+  // Cursor
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
 
@@ -35,7 +39,7 @@
   "editor.minimap.renderCharacters": false, // make minimap blockish (low level of detail)
   "editor.hideCursorInOverviewRuler": false, // don't highlight current line in scrollbar
   "editor.minimap.autohide": true, // puts sidebar on the right, less disruptive (doesn't shift code if text wrap is disabled) when opening with cmd+b
-  // "editor.minimap.enabled": false,
+  "editor.minimap.enabled": false,
 
   // ui
   "window.titleBarStyle": "custom",
@@ -58,254 +62,47 @@
   },
   "apc.font.family": "Geist Mono",
   "apc.monospace.font.family": "Geist Mono",
-  "apc.statusBar": {
-    "position": "editor-bottom",
-    "height": 28,
-    "fontSize": 12
-  },
 
   // Custom css
   "apc.stylesheet": {
+    ".sidebar": "padding-left: 5px !important",
     ".sidebar > .composite": "height: 12px !important",
     ".title-label": "display: none !important",
     ".title-actions": "display: none !important",
-    ".tabs-and-actions-container > .editor-actions": "display: none !important",
-    ".titlebar-center": "display: none !important",
     ".titlebar-right": "display: none !important",
     ".inline-tabs-placeholder": "display: none !important",
-    // ".split-view-view .visible": "background-color: #110f17 !important"
+    ".split-view-view .visible": "background-color: #151515 !important"
   },
 
-  // Aura theme customisation
-  "workbench.colorCustomizations": {
-    "[Aura Dark]": {
-      "editor.background": "#110f17",
-      "terminal.background": "#110f17",
-      "activityBar.background": "#110f17",
-      "statusBar.background": "#110f17",
-      "editorGroupHeader.tabsBackground": "#110f17",
-      // "tab.inactiveBackground": "#110f17"
+  "supermaven.enable": {
+    "*": true,
+    "mdx": false
+  },
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[mdx]": {
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 70
+  },
+  "go.formatTool": "goimports",
+  "[go]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
     }
   },
-  "symbols.hidesExplorerArrows": false,
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  }
 }
-
-// {
-//   "workbench.startupEditor": "none",
-//   "symbols.hidesExplorerArrows": false,
-//   "workbench.colorTheme": "Aura Dracula Spirit (Soft)",
-//   "workbench.iconTheme": "symbols",
-//   "workbench.sideBar.location": "right",
-//   "git.ignoreRebaseWarning": true,
-//   "launch": {
-//     "configurations": [],
-//     "compounds": []
-//   },
-//   "material-icon-theme.hidesExplorerArrows": true,
-//   "supermaven.enable": {
-//     "*": true
-//   },
-//   "workbench.editor.showTabs": "single",
-//   "workbench.statusBar.visible": false,
-//   "window.zoomLevel": 2,
-
-//   // ui stuff
-//   // font
-//   "editor.fontSize": 13,
-//   "editor.tabSize": 2,
-//   "editor.lineHeight": 2.1,
-//   "editor.fontLigatures": true,
-//   "editor.fontVariations": true,
-//   "editor.overviewRulerBorder": false,
-//   "editor.fontFamily": "Dank Mono",
-//   "editor.scrollbar.horizontal": "hidden",
-//   "editor.scrollbar.vertical": "hidden",
-//   // apc settings
-//   "apc.electron": {
-//     "backgroundColor": "#2A2E3D",
-//     "hasShadow": false,
-//     "transparent": true,
-//     "titleBarStyle": "hiddenInset",
-//     "vibrancy": "ultra-dark",
-//     "trafficLightPosition": {
-//       "x": 15,
-//       "y": 13
-//     }
-//   },
-//   "apc.statusBar": {
-//     "position": "editor-bottom",
-//     "height": 20,
-//     "fontSize": 10
-//   },
-//   "apc.sidebar.titlebar": {
-//     "height": 30,
-//     "fontSize": 11
-//   },
-//   "apc.listRow": {
-//     "lists": ["explorer-folders-view", "quick-input-list", "results"],
-//     "height": 26,
-//     "fontSize": 11
-//   },
-//   "apc.menubar.compact": true,
-//   "apc.activityBar": {
-//     "position": "top",
-//     "size": 30,
-//     "itemSize": 30,
-//     "itemMargin": 10
-//   },
-//   "apc.stylesheet": {
-//     "*": "font-family: Dank Mono;",
-//     ".title-actions": "display: none !important",
-//     ".quick-input-widget.show-file-icons, .editor-widget.find-widget": "box-shadow: none !important",
-//     ".filematch .monaco-icon-label:before, .custom-list-row.results .monaco-list-row .monaco-icon-label:before": "background-position: 0 bottom !important",
-//     ".filematch .monaco-count-badge": "padding: 5px 6px 0 6px !important",
-//     ".sidebar .title-label": "padding: 0 !important",
-//     ".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
-//     ".sidebar": "border: none !important",
-//     ".monaco-editor .cursors-layer .cursor": "background-image: linear-gradient(135deg, #67D0FF 10%, #C45DFF 100%)",
-//     ".quick-input-list-row div": "display: flex !important; align-items: center !important",
-//     ".title.show-file-icons .label-container .monaco-icon-label.file-icon": "padding-bottom: 6px !important",
-//     ".sidebar .title-label h2": "line-height: 2.8 !important",
-//     ".monaco-editor .scroll-decoration": "display: none !important",
-//     ".monaco-scrollable-element > .shadow.top": "display: none !important"
-//   },
-//   // cursor
-//   "editor.cursorBlinking": "smooth",
-//   "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
-//   "editor.cursorStyle": "line-thin",
-
-//   // top bar
-//   "breadcrumbs.enabled": false, // hides breadcrumb path at top of window
-//   "window.commandCenter": false, // hides command center at the top of the window. Use cmd+shift+p instead
-//   "workbench.layoutControl.enabled": false, // hides those little squares on the top right of the window
-//   "workbench.editor.editorActionsLocation": "hidden", // hides the "format" and ellipsis buttons on the top right of the window
-
-//   // minimap
-//   "editor.minimap.renderCharacters": false, // make minimap blockish (low level of detail)
-//   "editor.hideCursorInOverviewRuler": false, // don't highlight current line in scrollbar
-//   "editor.minimap.autohide": true, // puts sidebar on the right, less disruptive (doesn't shift code if text wrap is disabled) when opening with cmd+b
-
-//   // editor
-//   "editor.stickyScroll.enabled": true, // keep block name fixed at top when scrolling
-//   "editor.wordWrap": "off", // wrap text instead of scrolling horizontally
-//   "editor.codeActionsOnSave": {
-//     "source.fixAll": "explicit",
-//     "source.sortimports": "explicit"
-//   },
-//   "editor.minimap.enabled": false,
-//   "editor.mouseWheelZoom": false,
-//   "editor.quickSuggestions": {
-//     "comments": "off",
-//     "other": "on",
-//     "strings": "on"
-//   },
-//   "editor.accessibilitySupport": "off",
-//   "editor.defaultFormatter": "esbenp.prettier-vscode",
-//   "editor.linkedEditing": true,
-//   "editor.inlineSuggest.enabled": true,
-//   "editor.unicodeHighlight.nonBasicASCII": false,
-//   "extensions.ignoreRecommendations": true,
-//   "editor.formatOnSave": true,
-
-//   "workbench.colorCustomizations": {
-//     // "editorSuggestWidget.selectedBackground": "#231739",
-//     // "sideBar.background": "#191521"
-//     // "list.activeSelectionBackground": "#231739",
-//     // "list.inactiveSelectionBackground": "#231739",
-//     // "list.focusBackground": "#231739",
-//     // "list.hoverBackground": "#231739",
-//     // "terminalCursor.foreground": "#C45DFF"
-//   },
-
-//   // js tooling stuff
-//   "typescript.preferences.importModuleSpecifier": "non-relative", // prefer aliases when importing
-//   "eslint.options": {
-//     "extensions": [".js", ".jsx", ".mdx", ".ts", ".tsx"]
-//   },
-//   "eslint.validate": [
-//     "mdx",
-//     "javascript",
-//     "javascriptreact",
-//     "typescript",
-//     "typescriptreact"
-//   ],
-
-//   // code-runner extension
-//   "code-runner.runInTerminal": true,
-//   "code-runner.temporaryFileName": "",
-
-//   // explorer
-//   "explorer.confirmDelete": false,
-//   "explorer.confirmDragAndDrop": false,
-//   "explorer.decorations.badges": false,
-//   "explorer.compactFolders": false,
-
-//   // git stuff
-//   "git.confirmSync": false,
-//   "git.openRepositoryInParentFolders": "always",
-//   "git.decorations.enabled": false,
-//   "scm.diffDecorations": "none",
-//   "prettier.documentSelectors": ["*.{tsx,html)"],
-
-//   // terminal
-//   "terminal.integrated.env.osx": {
-//     "FIG_NEW_SESSION": "1"
-//   },
-//   "terminal.integrated.fontFamily": "GeistMono Nerd Font",
-//   "terminal.integrated.lineHeight": 1.4,
-//   "terminal.integrated.fontSize": 11,
-//   "window.autoDetectHighContrast": false,
-//   "workbench.editorAssociations": {
-//     "*.csv": "gc-excelviewer-csv-editor"
-//   },
-
-//   // diffEditor
-//   "diffEditor.ignoreTrimWhitespace": false,
-//   "diffEditor.hideUnchangedRegions.enabled": true,
-
-//   "go.toolsManagement.autoUpdate": true,
-//   "files.trimTrailingWhitespace": true,
-
-//   "[go]": {
-//     "editor.defaultFormatter": "golang.go",
-//     "editor.formatOnSave": true,
-//     "editor.formatOnSaveMode": "file"
-//   },
-//   "[html]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "[java]": {
-//     "editor.defaultFormatter": "redhat.java"
-//   },
-//   "[javascript]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "[javascriptreact]": {
-//     "editor.defaultFormatter": "esbenp.prettier-vscode"
-//   },
-//   "[prisma]": {
-//     "editor.defaultFormatter": "Prisma.prisma"
-//   },
-//   "[python]": {
-//     "editor.defaultFormatter": "ms-python.black-formatter",
-//     "editor.formatOnType": true
-//   }
-// }
-// // bright:
-// // black: '#666666'
-// // blue: '#5c78ff'
-// // cyan: '#5ac8ff'
-// // green: '#905aff'
-// // magenta: '#5ea2ff'
-// // red: '#ba5aff'
-// // white: '#ffffff'
-// // yellow: '#657b83'
-// // normal:
-// // black: '#121212'
-// // blue: '#2b4fff'
-// // cyan: '#28b9ff'
-// // green: '#7129ff'
-// // magenta: '#2883ff'
-// // red: '#a52aff'
-// // white: '#f1f1f1'
-// // yellow: '#3d2aff'
