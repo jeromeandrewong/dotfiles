@@ -3,8 +3,6 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=$PATH:/Users/jeromewong/.gem/bin
 export PATH=$PATH:$(go env GOPATH)/bin
 
-echo -e "\n. $(brew --prefix asdf)/libexec/asdf.sh" >> ${ZDOTDIR:-~}/.zshrc
-
 export NVM_DIR="$HOME/.nvm"
 export GEM_HOME="$HOME/.gem"
 
@@ -66,5 +64,3 @@ alias vs="code ."
 alias nrd="npm run dev"
 alias yrd="yarn dev"
 alias prd="pnpm run dev"
-
-. /opt/homebrew/opt/asdf/libexec/asdf.sh
