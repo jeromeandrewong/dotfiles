@@ -1,243 +1,228 @@
-# # format = """
-# # [░▒▓](#a3aed2)\
-# # [  ](bg:#a3aed2 fg:#090c0c)\
-# # [](bg:#769ff0 fg:#a3aed2)\
-# # $directory\
-# # [](fg:#769ff0 bg:#394260)\
-# # $git_branch\
-# # $git_status\
-# # [](fg:#394260 bg:#212736)\
-# # $nodejs\
-# # $rust\
-# # $golang\
-# # $php\
-# # [](fg:#212736 bg:#1d2230)\
-# # $time\
-# # [ ](fg:#1d2230)\
-# # \n$character"""
+format = """
+(bold blue) $directory$git_branch\
+(bold green) $fill $all $line_break\
+$character\
+"""
+[aws]
+format = '\[[$symbol($profile)(\($region\))(\[$duration\])]($style)\]'
 
-# # [directory]
-# # style = "fg:#212736 bg:#769ff0"
-# # format = "[ $path ]($style)"
-# # truncation_length = 3
-# # truncation_symbol = "…/"
+[bun]
+format = '\[[$symbol($version)]($style)\]'
 
-# # [git_branch]
-# # symbol = ""
-# # # symbol = ' '
-# # style = "bg:#394260"
+[c]
+format = '\[[$symbol($version(-$name))]($style)\]'
 
-# # format = '[[ $symbol $branch ](fg:#769ff0 bg:#394260)]($style)'
+[cmake]
+format = '\[[$symbol($version)]($style)\]'
 
-# # [git_metrics]
-# # format = "([+$added]($added_style))[]($added_style)"
-# # added_style = "fg:#1C3A5E bg:#FCF392"
-# # deleted_style = "fg:bright-red bg:235"
-# # disabled = false
+[cmd_duration]
+format = '\[[⏱ $duration]($style)\]'
 
+[cobol]
+format = '\[[$symbol($version)]($style)\]'
 
-# # [git_status]
-# # style = "bg:#394260"
-# # format = '[[($all_status$ahead_behind )](fg:#769ff0 bg:#394260)]($style)'
+[conda]
+format = '\[[$symbol$environment]($style)\]'
 
-# # [nodejs]
-# # symbol = ""
-# # style = "bg:#212736"
-# # format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[crystal]
+format = '\[[$symbol($version)]($style)\]'
 
-# # [rust]
-# # symbol = ""
-# # style = "bg:#212736"
-# # format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[daml]
+format = '\[[$symbol($version)]($style)\]'
 
-# # [golang]
-# # symbol = ""
-# # style = "bg:#212736"
-# # format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+[dart]
+format = '\[[$symbol($version)]($style)\]'
 
+[deno]
+format = '\[[$symbol($version)]($style)\]'
 
-# # [character]
-# # success_symbol = '[ ➜](bold green) '
-# # error_symbol = '[ ✗](#E84D44) '
+[docker_context]
+format = '\[[󰡨 $context]($style)\]'
 
-# # [cmd_duration]
-# # format = "[  $duration ]($style)"
-# # style = "fg:bright-white bg:18"
+[dotnet]
+format = '\[[$symbol($version)(🎯 $tfm)]($style)\]'
 
+[elixir]
+format = '\[[$symbol($version \(OTP $otp_version\))]($style)\]'
 
-# # [time]
-# # disabled = false
-# # time_format = "%R" # Hour:Minute Format
-# # style = "bg:#1d2230"
-# # format = '[[  $time ](fg:#a0a9cb bg:#1d2230)]($style)'
-# # ~/.config/starship.toml
+[elm]
+format = '\[[$symbol($version)]($style)\]'
 
-# command_timeout = 1000
-# add_newline = true
-# format = """$os$directory$git_branch$git_status$nodejs$golang$time\n$character"""
+[erlang]
+format = '\[[$symbol($version)]($style)\]'
 
-# # Drop ugly default prompt characters
-# [character]
-# success_symbol = ''
-# error_symbol = ''
+[fennel]
+format = '\[[$symbol($version)]($style)\]'
 
-# # ---
+[fossil_branch]
+format = '\[[$symbol$branch]($style)\]'
 
-# [os]
-# format = '[$symbol](bold white) '
-# disabled = false
-
-# [os.symbols]
-# Windows = ' '
-# Arch = '󰣇'
-# Ubuntu = ''
-# Macos = '󰀵'
-
-# # ---y
-
-# # Shows the username
-# [username]
-# style_user = 'white bold'
-# style_root = 'black bold'
-# format = '[$user]($style) '
-# disabled = false
-# show_always = true
-
-# # Shows the hostname
-# [hostname]
-# ssh_only = false
-# format = 'on [$hostname](bold yellow) '
-# disabled = false
-
-# # Shows current directory
-# [directory]
-# truncation_length = 1
-# truncation_symbol = '…/'
-# home_symbol = '󰋜 ~'
-# read_only_style = '197'
-# read_only = '  '
-# format = '[$path]($style)[$read_only]($read_only_style) '
-
-# # Shows current git branch
-# [git_branch]
-# symbol = ' '
-# format = 'on [$symbol$branch]($style)'
-# truncation_length = 4
-# truncation_symbol = '…/'
-# style = 'bold green'
-
-# # Shows current git status
-# [git_status]
-# format = '([ \( $all_status$ahead_behind\)]($style) )'
-# style = 'bold green'
-# conflicted = '[ conflicted=${count}](red) '
-# up_to_date = '[󰘽 up-to-date](green) '
-# untracked = '[󰋗 untracked=${count}](red) '
-# ahead = ' ahead=${count}'
-# diverged = ' ahead=${ahead_count}  behind=${behind_count}'
-# behind = ' behind=${count}'
-# stashed = '[ stashed=${count}](green) '
-# modified = '[󰛿 modified=${count}](yellow) '
-# staged = '[󰐗 staged=${count}](green) '
-# renamed = '[󱍸 renamed=${count}](yellow) '
-# deleted = '[󰍶 deleted=${count}](red) '
-
-# # Shows kubernetes context and namespace
-# [kubernetes]
-# format = 'via [󱃾 $context\($namespace\)](bold purple) '
-# disabled = false
-
-# [nodejs]
-# symbol = ""
-
-# [golang]
-# symbol = ""
-
-# [time]
-# disabled = true
-# time_format = "%R" # Hour:Minute Format
-# style = "bg:#1d2230"
-# format = ' $time'
-
-# CONFIG 2
-"$schema" = 'https://starship.rs/config-schema.json'
-
-add_newline = true
-# A minimal left prompt
-format = """$directory$character"""
-palette = "catppuccin_macchiato"
-# move the rest of the prompt to the right
-right_format = """$all"""
-
-# [character]
-# success_symbol = '[➜](bold fg:green)'
-
-[character]
-success_symbol = '[➜](bold fg:green bg:base)[](bold base)'
-error_symbol = '[✖](bold fg:red bg:base)[](bold base)'
-
-# [directory]
-# style = 'bold fg:text'
-# format = '[$path ]($style)[$read_only]($read_only_style)'
-# read_only_style = 'bold fg:red bg:mantle'
-
-[directory]
-style = 'bold fg:text bg:base'
-format = '[](bold base)[$path ]($style)[$read_only]($read_only_style)'
-read_only_style = 'bold fg:red bg:mantle'
-
-[golang]
-format = '[ ](bold cyan)'
-
-# [git_branch]
-# format='[$symbol$branch(:$remote_branch)]($style) '
-# style='bold bright fg:white'
-# symbol="🌱 "
+[gcloud]
+format = '\[[$symbol$account(@$domain)(\($region\))]($style)\]'
 
 [git_branch]
-format='[](bold base)[$symbol$branch(:$remote_branch)](bold bg:base fg:text)[](bold base)'
-style='bold bright fg:white bg:base'
-symbol=" "
+format = '\[[ $branch](#c6a0f6)\]'
+# format = '\[[$symbol$branch](#c6a0f6)\]'
 
 [git_status]
-# disabled=true
+disabled = true
+# format = '([\[$all_status$ahead_behind\]]($style))'
 
-# What's with the spacing?
-[os]
-disabled=true
+[golang]
+format = '\[[ ($version)]($style)\]'
 
-[package]
-disabled=true
+[gradle]
+format = '\[[$symbol($version)]($style)\]'
+
+[guix_shell]
+format = '\[[$symbol]($style)\]'
+
+[haskell]
+format = '\[[$symbol($version)]($style)\]'
+
+[haxe]
+format = '\[[$symbol($version)]($style)\]'
+
+[helm]
+format = '\[[$symbol($version)]($style)\]'
+
+[hg_branch]
+format = '\[[$symbol$branch]($style)\]'
+
+[java]
+format = '\[[ ($version)]($style)\]'
+
+[julia]
+format = '\[[$symbol($version)]($style)\]'
+
+[kotlin]
+format = '\[[$symbol($version)]($style)\]'
+
+[kubernetes]
+format = '\[[$symbol$context( \($namespace\))]($style)\]'
+
+[lua]
+format = '\[[$symbol($version)]($style)\]'
+
+[memory_usage]
+format = '\[$symbol[$ram( | $swap)]($style)\]'
+
+[meson]
+format = '\[[$symbol$project]($style)\]'
+
+[nim]
+format = '\[[$symbol($version)]($style)\]'
+
+[nix_shell]
+format = '\[[$symbol$state( \($name\))]($style)\]'
 
 [nodejs]
-disabled=true
+format = '\[[$symbol($version)]($style)\]'
 
-[palettes.catppuccin_macchiato]
-rosewater = "#f4dbd6"
-flamingo = "#f0c6c6"
-pink = "#f5bde6"
-mauve = "#c6a0f6"
-red = "#ed8796"
-maroon = "#ee99a0"
-peach = "#f5a97f"
-yellow = "#eed49f"
-green = "#a6da95"
-teal = "#8bd5ca"
-sky = "#91d7e3"
-sapphire = "#7dc4e4"
-blue = "#8aadf4"
-lavender = "#b7bdf8"
-text = "#cad3f5"
-subtext1 = "#b8c0e0"
-subtext0 = "#a5adcb"
-overlay2 = "#939ab7"
-overlay1 = "#8087a2"
-overlay0 = "#6e738d"
-surface2 = "#5b6078"
-surface1 = "#494d64"
-surface0 = "#363a4f"
-base = "#24273a"
-mantle = "#1e2030"
-crust = "#181926"
+[ocaml]
+format = '\[[$symbol($version)(\($switch_indicator$switch_name\))]($style)\]'
+
+[opa]
+format = '\[[$symbol($version)]($style)\]'
+
+[openstack]
+format = '\[[$symbol$cloud(\($project\))]($style)\]'
+
+[os]
+format = '\[[$symbol]($style)\]'
+
+[package]
+format = '\[[󰏗 $version]($style)\]'
+
+[perl]
+format = '\[[$symbol($version)]($style)\]'
+
+[php]
+format = '\[[$symbol($version)]($style)\]'
+
+[pijul_channel]
+format = '\[[$symbol$channel]($style)\]'
+
+[pulumi]
+format = '\[[$symbol$stack]($style)\]'
+
+[purescript]
+format = '\[[$symbol($version)]($style)\]'
+
+[python]
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+
+[raku]
+format = '\[[$symbol($version-$vm_version)]($style)\]'
+
+[red]
+format = '\[[$symbol($version)]($style)\]'
+
+[ruby]
+format = '\[[$symbol($version)]($style)\]'
+
+[rust]
+format = '\[[$symbol($version)]($style)\]'
+
+[scala]
+format = '\[[$symbol($version)]($style)\]'
+
+[spack]
+format = '\[[$symbol$environment]($style)\]'
+
+[sudo]
+format = '\[[as $symbol]($style)\]'
+
+[swift]
+format = '\[[$symbol($version)]($style)\]'
+
+[terraform]
+format = '\[[$symbol$workspace]($style)\]'
+
+[time]
+format = '\[[$time]($style)\]'
+
+[username]
+format = '\[[$user]($style)\]'
+
+[vagrant]
+format = '\[[$symbol($version)]($style)\]'
+
+[vlang]
+format = '\[[$symbol($version)]($style)\]'
+
+[zig]
+format = '\[[$symbol($version)]($style)\]'
+
+[solidity]
+format = '\[[$symbol($version)]($style)\]'
+
+# [palettes.catppuccin_macchiato]
+# rosewater = "#f4dbd6"
+# flamingo = "#f0c6c6"
+# pink = "#f5bde6"
+# mauve = "#c6a0f6"
+# red = "#ed8796"
+# maroon = "#ee99a0"
+# peach = "#f5a97f"
+# yellow = "#eed49f"
+# green = "#a6da95"
+# teal = "#8bd5ca"
+# sky = "#91d7e3"
+# sapphire = "#7dc4e4"
+# blue = "#8aadf4"
+# lavender = "#b7bdf8"
+# text = "#cad3f5"
+# subtext1 = "#b8c0e0"
+# subtext0 = "#a5adcb"
+# overlay2 = "#939ab7"
+# overlay1 = "#8087a2"
+# overlay0 = "#6e738d"
+# surface2 = "#5b6078"
+# surface1 = "#494d64"
+# surface0 = "#363a4f"
+# base = "#24273a"
+# mantle = "#1e2030"
+# crust = "#181926"
 
 
