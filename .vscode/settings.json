@@ -5,10 +5,8 @@
   "git.confirmSync": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "symbols.hidesExplorerArrows": false,
-
-  // Theme
-  "workbench.colorTheme": "Enchant",
-  "workbench.iconTheme": "moxer-icons",
+  "workbench.iconTheme": "moxer-icons", 
+  "workbench.panel.defaultLocation": "right",
 
   // Change font
   "editor.fontFamily": "Geist Mono",
@@ -23,7 +21,7 @@
 
   // Font
   "editor.fontSize": 14,
-  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontSize": 10,
   "editor.fontLigatures": true,
   "editor.fontVariations": true,
 
@@ -39,7 +37,7 @@
   "editor.minimap.renderCharacters": false, // make minimap blockish (low level of detail)
   "editor.hideCursorInOverviewRuler": false, // don't highlight current line in scrollbar
   "editor.minimap.autohide": true, // puts sidebar on the right, less disruptive (doesn't shift code if text wrap is disabled) when opening with cmd+b
-  "editor.minimap.enabled": false,
+  // "editor.minimap.enabled": false,
 
   // ui
   "window.titleBarStyle": "custom",
@@ -71,17 +69,17 @@
     ".title-actions": "display: none !important",
     ".titlebar-right": "display: none !important",
     ".inline-tabs-placeholder": "display: none !important",
-    ".split-view-view .visible": "background-color: #151515 !important"
+    ".split-view-view .visible": "background-color: #252121 !important"
   },
 
   "supermaven.enable": {
     "*": true,
     "mdx": false
   },
+  "editor.formatOnSave": true,
 
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
   },
 
   "[javascriptreact]": {
@@ -104,5 +102,6 @@
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
     }
-  }
+  },
+  "workbench.colorTheme": "Yuru"
 }
