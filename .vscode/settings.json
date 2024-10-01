@@ -1,5 +1,6 @@
 {  // open json editor for settings
   "workbench.settings.editor": "json",
+
   // misc
   "workbench.startupEditor": "none",
   "git.confirmSync": false,
@@ -18,8 +19,10 @@
   "notebook.output.fontFamily": "Geist Mono",
   "markdown.preview.fontFamily": "Geist Mono",
   "editor.inlayHints.fontFamily": "Geist Mono",
+  "apc.font.family": "Geist Mono",
+  "apc.monospace.font.family": "Geist Mono",
 
-  // Font
+  // Font 
   "editor.fontSize": 14,
   "terminal.integrated.fontSize": 10,
   "editor.fontLigatures": true,
@@ -29,49 +32,88 @@
   "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
 
-  // Top bar
-  "breadcrumbs.enabled": false, // hides breadcrumb path at top of window
-  "window.commandCenter": false,
 
   // Minimap
   "editor.minimap.renderCharacters": false, // make minimap blockish (low level of detail)
   "editor.hideCursorInOverviewRuler": false, // don't highlight current line in scrollbar
   "editor.minimap.autohide": true, // puts sidebar on the right, less disruptive (doesn't shift code if text wrap is disabled) when opening with cmd+b
-  // "editor.minimap.enabled": false,
 
   // ui
-  "window.titleBarStyle": "custom",
   "editor.stickyScroll.enabled": true, // keep block name fixed at top when scrolling
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
 
-  // APC
-  "apc.activityBar": {
-    "position": "bottom",
-    "hideSettings": true,
-    "size": 28
-  },
+  // Tweaks / Declutter
+  "workbench.tree.indent": 16, // Increase tree indent in Explorer
+  "editor.minimap.enabled": false, // Hide minimap
+  "workbench.layoutControl.enabled": false, // Hide layout buttons
+  "window.commandCenter": false, // Hide command center
+  "breadcrumbs.enabled": false, // Hide breadcrumbs from top of editor
+  "editor.glyphMargin": false, // Remove the line number gutter
+
+  // Make tabs inline with window controls
+  // See https://twitter.com/kamilogorek/status/1741877781187756323
+  "window.titleBarStyle": "native",
   "apc.electron": {
     "titleBarStyle": "hiddenInset",
     "trafficLightPosition": {
-      "x": 12,
+      "x": 11,
       "y": 10
     }
   },
-  "apc.font.family": "Geist Mono",
-  "apc.monospace.font.family": "Geist Mono",
-
-  // Custom css
+  "apc.header": {
+    "height": 38
+  },
   "apc.stylesheet": {
-    ".sidebar": "padding-left: 5px !important",
-    ".sidebar > .composite": "height: 12px !important",
-    ".title-label": "display: none !important",
-    ".title-actions": "display: none !important",
-    ".titlebar-right": "display: none !important",
-    ".inline-tabs-placeholder": "display: none !important",
-    ".split-view-view .visible": "background-color: #252121 !important"
+    ".title-label > h2": "display: none", // Remove primary side bar title
+    ".nosidebar .inline-tabs-placeholder": "width: 75px", // Align tabs to not overlap window controls when primary bar is hidden
+    ".title-actions": "display: none", // Remove primary side bar action icons
+
+    // Move directory name to second line in tab title
+    // See https://twitter.com/wesbos/status/1742574100558528645
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab": {
+      "--editor-group-tab-height": 1.2
+    },
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab .monaco-icon-label:before": {
+      "background-position": "top left",
+      "padding-right": "2px"
+    },
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab span.monaco-icon-label-container": {
+      "line-height": 1.5
+    },
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab span.monaco-icon-description-container": {
+      "display": "block",
+      "font-size": "0.75em",
+      "line-height": 1
+    },
+    ".monaco-workbench .part.editor > .content .editor-group-container > .title .tabs-container > .tab span.monaco-icon-description-container .label-description": {
+      "margin": 0
+    },
+
+    // Make activity bar badges smaller
+    ".monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .badge .badge-content": {
+      "font-size": "0.5em",
+      "height": "1.8em",
+      "min-width": "1.8em",
+      "line-height": 0,
+      "display": "flex",
+      "align-items": "center",
+      "justify-content": "center",
+      "padding": 0,
+      "overflow": "hidden"
+    },
+    ".monaco-workbench .activitybar>.content :not(.monaco-menu)>.monaco-action-bar .badge.progress-badge .badge-content:before": {
+      "opacity": 0 // Hide clock icon in badges
+    }
   },
 
+  // Move activity bar to bottom
+  "apc.activityBar": {
+    "position": "bottom",
+    "size": 32,
+    "itemSize": 28
+  }
+  ,
   "supermaven.enable": {
     "*": true,
     "mdx": false
@@ -103,5 +145,5 @@
       "source.organizeImports": "explicit"
     }
   },
-  "workbench.colorTheme": "Yuru"
+  "workbench.colorTheme": "Nightfox"
 }
