@@ -5,6 +5,10 @@ export PATH=$PATH:$(go env GOPATH)/bin
 
 export NVM_DIR="$HOME/.nvm"
 export GEM_HOME="$HOME/.gem"
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh" # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && \. "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
@@ -64,3 +68,10 @@ alias vs="code ."
 alias nrd="npm run dev"
 alias yrd="yarn dev"
 alias prd="pnpm run dev"
+
+## terraform
+alias tf="terraform"
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
