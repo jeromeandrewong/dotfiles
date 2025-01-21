@@ -1,35 +1,38 @@
 {  // open json editor for settings
   "workbench.settings.editor": "json",
-
+  "update.mode": "none",
   // misc
   "workbench.startupEditor": "none",
   "git.confirmSync": false,
   "editor.acceptSuggestionOnCommitCharacter": false,
   "symbols.hidesExplorerArrows": false,
-  "workbench.iconTheme": "moxer-icons", 
+  "workbench.iconTheme": "moxer-icons",
   "workbench.panel.defaultLocation": "right",
 
   // Change font
-  "editor.fontFamily": "Geist Mono",
-  "scm.inputFontFamily": "Geist Mono",
+  "editor.fontFamily": "'Berkeley Mono', monospace",
   "terminal.integrated.fontFamily": "GeistMono Nerd Font",
-  "chat.editor.fontFamily": "Geist Mono",
-  "debug.console.fontFamily": "Geist Mono",
-  "editor.codeLensFontFamily": "Geist Mono",
-  "notebook.output.fontFamily": "Geist Mono",
-  "markdown.preview.fontFamily": "Geist Mono",
-  "editor.inlayHints.fontFamily": "Geist Mono",
-  "apc.font.family": "Geist Mono",
-  "apc.monospace.font.family": "Geist Mono",
+  "apc.font.family": "'Berkeley Mono', monospace",
+  "apc.monospace.font.family": "'Berkeley Mono', monospace",
+  "files.trimTrailingWhitespace": true,
 
-  // Font 
-  "editor.fontSize": 14,
-  "terminal.integrated.fontSize": 10,
+  // Font
+  "editor.fontSize": 16,
+  "editor.lineHeight": 32,
+  "terminal.integrated.fontSize": 14,
   "editor.fontLigatures": true,
   "editor.fontVariations": true,
+  "editor.letterSpacing": 0.2,
+  "editor.cursorStyle": "line",
+  "editor.cursorWidth": 5,
+  "editor.renderWhitespace": "trailing",
+  "editor.wordWrap":"on",
+
+
 
   // Cursor
-  "editor.cursorBlinking": "smooth",
+  "editor.cursorBlinking": "phase",
+  // "editor.cursorBlinking": "smooth",
   "editor.cursorSmoothCaretAnimation": "on", // move cursor smoothly
 
 
@@ -132,12 +135,19 @@
     "editor.wrappingIndent": "same",
     "editor.wordWrapColumn": 70
   },
-  "go.formatTool": "goimports",
+  "[markdown]":{
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.formatOnSave":true,
+    "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
+    "diffEditor.ignoreTrimWhitespace": false,
+  },
+  "go.formatTool": "gofmt",
   "[go]": {
     "editor.formatOnSave": true,
     "editor.codeActionsOnSave": {
       "source.organizeImports": "explicit"
-    }
+    },
+    "editor.defaultFormatter": "golang.go"
   },
   "[go.mod]": {
     "editor.formatOnSave": true,
@@ -145,5 +155,11 @@
       "source.organizeImports": "explicit"
     }
   },
-  "workbench.colorTheme": "Bushland"
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "0x96f"
 }
